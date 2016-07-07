@@ -8,14 +8,14 @@
     - Get the player from the grass to the water safely across the road while avoiding the moving bugs.
 
 ###Characters
-    - ####Human - Playable
-    - ####Bugs - NPC
+    - Human - _Playable_
+    - Bugs - _NPC_
 
 ###Controls
-    - ####↑ - Move up
-    - ####↓ - Move down
-    - ####→ - Move right
-    - ####← - Move left
+    - ↑ - _Move up_
+    - ↓ - _Move down_
+    - → - _Move right_
+    - ← - _Move left_
 
 ###Scoring
     - For each successsful crossing, the gamer earns 1 point which keep on adding up
@@ -25,4 +25,4 @@
     - The player can move in any direction while aiming to get to the top of the screen
     - The bugs can only move from left to right and do not have a set pattern or speed
 
-#_The game has been tested across multiple browsers. In case you still identify a bug, please do let me know._
+####_The game has been tested across multiple browsers. In case you still identify a bug, please do let me know._
