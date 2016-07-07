@@ -7,6 +7,8 @@ var Enemy = function() {
     // we've provided one for you to get started
     this.x = -(Math.random() * 5) * 101;
     this.y = (Math.floor(Math.random() * 3) + 1) * 75;
+    this.height = 40;
+    this.width = 60;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
@@ -23,7 +25,7 @@ Enemy.prototype.update = function(dt) {
         this.y = (Math.floor(Math.random() * 3) + 1) * 75;
     }
     this.render();
-    if ((this.x === player.x) && (this.y === player.y)) {
+    if ((((this.x < (player.x + player.width)) && ((this.x + this.width) > player.x))) && ((this.y < (player.y + player.height)) && ((this.height + this.y) > player.y))) {
         this.reset();
     }
 };
@@ -56,6 +58,8 @@ var Player = function() {
     // we've provided one for you to get started
     this.x = 202;
     this.y = 415;
+    this.height = 40;
+    this.width = 60;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/char-boy.png';
