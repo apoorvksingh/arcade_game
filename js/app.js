@@ -31,8 +31,8 @@ Enemy.prototype.update = function(dt) {
 };
 
 // Draw the enemy on the screen, required method for game
+//Displays the current score of the player
 Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     ctx.font = '18pt Impact';
     ctx.textAlign = 'center';
     ctx.strokeStyle = 'black';
@@ -41,8 +41,10 @@ Enemy.prototype.render = function() {
     var scoreMessage = "Score = " + score;
     ctx.fillText(scoreMessage, 450, 80);
     ctx.strokeText(scoreMessage, 450, 80);
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+//Resetting the game in case of a player bug collision
 Enemy.prototype.reset = function() {
     score = 0;
     gameOverMessage = "You Lost! Better luck next time. Score = " + score;
@@ -69,8 +71,6 @@ Player.prototype = Object.create(Enemy.prototype);
 Player.prototype.constructor = Player;
 
 Player.prototype.update = function() {
-    this.x = this.x;
-    this.y = this.y;
     this.render();
     if (this.y == 0) {
         player.reset();
@@ -94,7 +94,6 @@ Player.prototype.handleInput = function(key) {
         this.y += 83;
         keyValue = " ";
     }
-    ctx2.clearRect(0, 0, 900, 900);
     this.update();
 };
 
@@ -143,8 +142,9 @@ var messageRender = function(message) {
     ctx2.textAlign = 'center';
     ctx2.strokeStyle = 'black';
     ctx2.lineWidth = 1;
-    ctx2.fillStyle = 'white';
+    ctx2.fillStyle = 'Green';
     ctx2.fillText(message, 253, 30);
     ctx2.strokeText(message, 253, 30);
+    setTimeout(function() {ctx2.clearRect(0, 0, 900, 900);}, 2000);
 };
 
