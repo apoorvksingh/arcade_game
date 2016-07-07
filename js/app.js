@@ -47,6 +47,7 @@ Enemy.prototype.render = function() {
 //Resetting the game in case of a player bug collision
 Enemy.prototype.reset = function() {
     score = 0;
+
     gameOverMessage = "You Lost! Better luck next time. Score = " + score;
     messageRender(gameOverMessage);
     gameReset();
@@ -145,6 +146,6 @@ var messageRender = function(message) {
     ctx2.fillStyle = 'Green';
     ctx2.fillText(message, 253, 30);
     ctx2.strokeText(message, 253, 30);
-    setTimeout(function() {ctx2.clearRect(0, 0, 900, 900);}, 2000);
+    setTimeout(function() {ctx2.clearRect(0, 0, 900, 900);}, 500);
 };
 
