@@ -4,6 +4,11 @@
 
 ##Version 1.0
 
+###Run the game
+    You can run the game in two ways
+    - Download the entire directory from GitHub as a zip file. Unzip its contents and run the index.html file in any browser
+    - Go to http://apoorvksingh.github.io/arcade_game in your browser window (currently does not support mobile browsers)
+
 ###Objective
     - Get the player from the grass to the water safely across the road while avoiding the moving bugs.
 

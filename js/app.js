@@ -1,5 +1,5 @@
+'use strict';
 var score = 0;
-var gameOverMessage;
 var ctx2;
 // Enemies our player must avoid
 var Enemy = function() {
@@ -48,10 +48,11 @@ Enemy.prototype.render = function() {
 Enemy.prototype.reset = function() {
     score = 0;
 
-    gameOverMessage = "You Lost! Better luck next time. Score = " + score;
-    messageRender(gameOverMessage);
+    var gameOverMessage = "You Lost! Better luck next time. Score = " + score;
+    var color = 'red';
+    messageRender(gameOverMessage, color);
     gameReset();
-}
+};
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -73,8 +74,8 @@ Player.prototype.constructor = Player;
 
 Player.prototype.update = function() {
     this.render();
-    if (this.y == 0) {
-        player.reset();
+    if (this.y === 0) {
+        this.reset();
     }
 };
 
@@ -100,8 +101,9 @@ Player.prototype.handleInput = function(key) {
 
 Player.prototype.reset = function() {
     score += 1;
-    gameOverMessage = "You WON! Great Job.Score = " + score;
-    messageRender(gameOverMessage);
+    var gameOverMessage = "You WON! Great Job.Score = " + score;
+    var color = 'green';
+    messageRender(gameOverMessage, color);
     gameReset();
 };
 
@@ -137,13 +139,13 @@ var gameReset = function() {
     }
 };
 
-var messageRender = function(message) {
+var messageRender = function(message, color) {
     ctx2 = ctx;
     ctx2.font = '30px Impact';
     ctx2.textAlign = 'center';
     ctx2.strokeStyle = 'black';
     ctx2.lineWidth = 1;
-    ctx2.fillStyle = 'Green';
+    ctx2.fillStyle = color;
     ctx2.fillText(message, 253, 30);
     ctx2.strokeText(message, 253, 30);
     setTimeout(function() {ctx2.clearRect(0, 0, 900, 900);}, 500);
